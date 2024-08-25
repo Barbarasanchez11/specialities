@@ -36,7 +36,7 @@ const usersData = [
 function findUsers(department){
     const specialtyUsers = []//se alamacenan los usuarios que tienen el mismo departamento
     usersData.forEach(user =>{
-        if(user.specialty== department){
+        if(user.specialty.toLowerCase()== department.toLowerCase()){
             specialtyUsers.push(user)//si coincide el dpto y specialty se agrega al array
         }
     })
@@ -102,3 +102,4 @@ app.use((req,res) => {
 app.listen(3000, () => {
     console.log('puerto http://localhost:3000');
 })
+
